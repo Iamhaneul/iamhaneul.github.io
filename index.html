@@ -77,7 +77,7 @@
       padding:7px 0;
       font-weight:700;
       font-size:16px;
-      border:2px solid var(--main-color02);
+      border:3px solid var(--main-color02);
       border-radius:30px;
       color:var(--main-color02);
     }
@@ -92,27 +92,33 @@
       margin-bottom:90px;
     }
     .sec01 .bottom-txt{
-      display:flex;
-      flex-flow:row nowrap;
-      justify-content:center;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
       color:var(--main-color02);
+      position:relative;
     }
-    /* 적용 안 됨 */
     .sec01 .bottom-txt li:nth-child(1)::after{
       content:'';
-      display:block;
+      display:inline-block;
+      position:absolute;
+      left:300px;
+      top:50%;
+      transform:translateY(-50%);
       width:131px;
       height:1px;
-      color:var(--main-color02);
+      background:var(--main-color02);
     }
     .sec01 .bottom-txt li:nth-child(2)::after{
       content:'';
-      display:block;
+      display:inline-block;
+      position:absolute;
+      right:240px;
+      top:50%;
+      transform:translateY(-50%);
       width:203px;
       height:1px;
-      color:var(--main-color02);
+      background:var(--main-color02);
     }
-    /* 적용 안 됨 */
 
     /* SEC02 ABOUT */
     .sec02{background:rgb(255,165,0,0.7);}
@@ -122,23 +128,22 @@
     .sec02 .img-box{
       width:300px;
       height:300px;
-      position:absolute;
-      left:114px;
-      top:270px;
+      background:var(--main-color02);
     }
     .sec02 .about-txt{
+      height:570px;
       padding:135px 114px;
-      padding-left:528px;
-      padding-right:94px;
       background:#fff;
       border-radius:10px;
       border-top-left-radius:0;
     }
     .sec02 .grid-container{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
-      margin-top:24px;
-      margin-bottom:48px;
+      grid-template-columns:4fr 2fr 2fr;
+    }
+    .sec02 .education{
+      grid-area:2/2/4/2;
+      transform:translateY(-50%);
     }
     .sec02 .main-list-tit{
       width:158px;
@@ -152,16 +157,22 @@
       color:var(--main-color02);
     }
     .sec02 .list-tit{
+      margin-right:24px;
+      margin-top:24px;
       font-family:'Roboto';
       text-transform:uppercase;
     }
     .sec02 .list-txt{
-      transform:translate(-230px,-2px);
+      margin-top:24px;
+      margin-bottom:48px;
     }
-    /* 목록 그리드 적용 안 됨 */
 
     /* SEC03 PUBLISHING01 */
     .sec03{background:rgb(255,255,0,0.5);}
+    .sec03 .grid-container{
+      display:grid;
+      grid-template-columns:repeat(2,auto);
+    }
     .sec03 .publishing-a{
       padding:50px;
       padding-right:94px;
@@ -172,6 +183,7 @@
     .sec03 h4{
       display:block;
       width:158px;
+      padding:7px 0;
       font-weight:700;
       text-align:center;
       text-transform:uppercase;
@@ -179,10 +191,30 @@
       border-radius:30px;
       color:var(--main-color02);
     }
+    .sec03 .img-box{
+      width:640px;
+      height:470px;
+      background:var(--main-color02);
+    }
+    .sec03 .explanation{
+      margin:94px 71px;
+    }
+    .sec03 .summary{
+      margin-top:36px;
+      margin-bottom:100px;
+    }
+    .sec03 .summary::after{
+      content:'';
+      display:block;
+      width:20px;
+      height:1px;
+      background:var(--main-color02);
+    }
     .sec03 .btn-view{
       width:114px;
       height:30px;
-      padding:5px 40px;
+      padding:7px 40px;
+      font-family:'Roboto';
       font-size:14px;
       text-transform:uppercase;
       background:var(--main-color01);
@@ -193,7 +225,47 @@
 
 
     .sec04{background:lightgreen;}
+
+    /* SEC05 GRAPICS */
     .sec05{background:lightblue;}
+    .sec05 .art-design{
+      width:1080px;
+      height:570px;
+      padding:50px;
+      background:#fff;
+      border-radius:10px;
+      border-top-left-radius:0;
+    }
+    .sec05 .img-box{
+      display:grid;
+      grid-template-columns: repeat();
+      width:340px;
+      height:470px;
+      background:var(--main-color02);
+    }
+    .sec05 .d-img-box{
+      width:226px;
+      height:226px;
+      background:var(--main-color02);
+    }
+
+    .sec06{display:none;}
+    #footer{display:none;}
+
+
+
+
+    /* 모바일 기준 */
+    @media (min-width:360px) {
+
+    }
+
+
+
+    /* 태블릿 기준 */
+    @media (min-width:768px) {
+      
+    }
   </style>
 </head>
 
@@ -248,9 +320,9 @@
             <li>grapics</li>
           </ul>
         </nav>
-        <div class="img-box"><img src="./images/girl.jpg" alt="profil pic"></div>
-        <div class="about-txt">
-          <p class="profil">
+        <div class="grid-container about-txt">
+          <div class="img-box"></div>
+          <div class="profil">
             <p class="main-list-tit">profil</p>
             <div class="grid-container">
               <ul class="list-tit">
@@ -264,8 +336,8 @@
                 <li>dlgksmf8336@naver.com</li>
               </ul>
             </div>
-          </p>
-          <p class="certificate">
+          </div>
+          <div class="certificate">
             <p class="main-list-tit">certificate</p>
             <div class="grid-container">
               <ul class="list-tit">
@@ -278,13 +350,12 @@
                 <li>MOS Excel</li>
               </ul>
             </div>
-          </p>
-          <p class="education">
+          </div>
+          <div class="education">
             <p class="main-list-tit">education</p>
             <div class="grid-container">
               <ul class="list-tit">
                 <li>2024</li>
-                <br>
                 <li>2021</li>
               </ul>
               <ul class="list-txt">
@@ -292,7 +363,7 @@
                 <li>서울신학대학교 글로벌경영학과 재학중</li>
               </ul>
             </div>
-          </p>
+          </div>
         </div>
       </div>
     </section>
@@ -309,12 +380,14 @@
         </nav>
         <article class="art-web-publishing">
           <h3>WEB PUBLISHUNG</h3>
-          <div class="publishing-a">
-            <img src="" alt="publishing-image01">
-            <h4>웹사이트 01</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, vel?</p>
-            <div class="btn-view">
-              <span>view</span>
+          <div class="grid-container publishing-a">
+            <div class="img-box"></div>
+            <div class="explanation">
+              <h4>웹사이트 01</h4>
+              <p class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, vel?</p>
+              <div class="btn-view">
+                <span>view</span>
+              </div>
             </div>
           </div>
         </article>
@@ -322,29 +395,36 @@
     </section>
     <section class="sec sec04 publishing publishing02" id="publishing publishing02">
       <div class="container">
-        <article class="art-web-publishing">
-          <h3>WEB PUBLISHUNG</h3>
-          <div class="publishing-a">
-            <img src="" alt="publishing-image01">
-            <h4>웹사이트 02</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, vel?</p>
-            <div class="btn-view">
-              <span>view</span>
-            </div>
-          </div>
-        </article>
+        <nav class="sec-nav">
+          <ul>
+            <li>home</li>
+            <li>about</li>
+            <li  class="active">publishing</li>
+            <li>grapics</li>
+          </ul>
+        </nav>
       </div>
     </section>
     <section class="sec sec05 grapics grapics01" id="grapics grapics01">
       <div class="container">
         <h2>GRAPICS01</h2>
+        <nav class="sec-nav">
+          <ul>
+            <li>home</li>
+            <li>about</li>
+            <li>publishing</li>
+            <li class="active">grapics</li>
+          </ul>
+        </nav>
         <article class="art-design">
           <h3>DESIGN</h3>
-          <div class="poster-design">
-            <h4>POSTER DESIGN</h4>
+          <div class="grapic-design poster-design">
+            <h4>GRAPIC DESIGN01</h4>
             <ul>
-              <li><img src="" alt="poster01"></li>
-              <li><img src="" alt="poster02"></li>
+              <li><div class="img-box"></div></li>
+              <li><div class="img-box"></div></li>
+              <li><div class="img-box d-img-box"></div></li>
+              <li><div class="img-box d-img-box"></div></li>
             </ul>
           </div>
         </article>
@@ -353,13 +433,21 @@
     <section class="sec sec06 grapics grapics02" id="grapics grapics02">
       <div class="container">
         <h2>GRAPICS02</h2>
+        <nav class="sec-nav">
+          <ul>
+            <li>home</li>
+            <li>about</li>
+            <li  class="active">publishing</li>
+            <li>grapics</li>
+          </ul>
+        </nav>
         <article class="art-design">
           <h3>DESIGN</h3>
-          <div class="poster-design">
-            <h4>CARDNEWS DESIGN</h4>
+          <div class="grapic-design cardnews-design">
+            <h4>GRAPIC DESIGN02</h4>
             <ul>
-              <li><img src="" alt="cardnews01"></li>
-              <li><img src="" alt="cardnews02"></li>
+              <li><div class="img-box"></div></li>
+              <li><div class="img-box"></div></li>
             </ul>
           </div>
         </article>
