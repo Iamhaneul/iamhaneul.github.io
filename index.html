@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+  <title>HANEUL'S PORTFOLIO</title>
+  <style>
+    :root{
+      --main-color01:#ee5050;
+      --main-color02:#0948b3;
+      font-family:'Noto Sans KR',sans-serif;
+      font-weight:500;
+      font-size:16px;
+      color:#111;
+      line-height:1.2;
+    }
+    .container{
+      max-width:1280px;
+      margin:0 auto;
+      padding:80px 20px;
+      height:920px;
+    }
+    #wrap{
+      position:relative;
+      overflow:hidden;
+    }
+    h1,h2,h3,h4,h5,h6{display:none;}
+    #header{display:none;}
+
+    /* NAV */
+    nav ul{
+      display:grid;
+      grid-template-columns:repeat(4,auto);
+      width:501px;
+      height:50px;
+      text-align:center;
+      text-transform:uppercase;
+    }
+    nav li{
+      padding-top:13px;
+      font-family:'Roboto';
+      font-size:20px;
+      border:1px solid #000;
+      background:#fff;
+      border-top-left-radius:10px;
+      border-top-right-radius:10px;
+      z-index:5;
+    }
+    nav li.active{
+      border-bottom:none;
+      background:var(--main-color01);
+      font-weight:700;
+      color:#fff;
+    }
+
+    /* SLIDE 01 INTRO */
+    .sec01{
+      font-family:'Roboto';
+      background:var(--main-color02);
+    }
+    .sec01 .intro-txt{
+      padding:100px 114px;
+      text-align:center;
+      text-transform:uppercase;
+      background:#fff;
+      border-radius:10px;
+      border-top-left-radius:0;
+      border-top:20px solid #555;
+      transform:translateY(-20px);
+    }
+    .sec01 .top-txt{
+      margin:0 151px;
+      padding:7px 0;
+      font-weight:700;
+      font-size:16px;
+      border:2px solid var(--main-color02);
+      border-radius:30px;
+      color:var(--main-color02);
+    }
+    .sec01 .main-tit01{
+      margin-top:70px;
+      font-weight:700;
+      font-size:80px;
+    }
+    .sec01 .main-tit02{
+      font-weight:900;
+      font-size:130px;
+      margin-bottom:90px;
+    }
+    .sec01 .bottom-txt{
+      display:flex;
+      flex-flow:row nowrap;
+      justify-content:center;
+      color:var(--main-color02);
+    }
+    /* 적용 안 됨 */
+    .sec01 .bottom-txt li:nth-child(1)::after{
+      content:'';
+      display:block;
+      width:131px;
+      height:1px;
+      color:var(--main-color02);
+    }
+    .sec01 .bottom-txt li:nth-child(2)::after{
+      content:'';
+      display:block;
+      width:203px;
+      height:1px;
+      color:var(--main-color02);
+    }
+    /* 적용 안 됨 */
+
+    /* SEC02 ABOUT */
+    .sec02{background:rgb(255,165,0,0.7);}
+    .sec02 .container{
+      position:relative;
+    }
+    .sec02 .img-box{
+      width:300px;
+      height:300px;
+      position:absolute;
+      left:114px;
+      top:270px;
+    }
+    .sec02 .about-txt{
+      padding:135px 114px;
+      padding-left:528px;
+      padding-right:94px;
+      background:#fff;
+      border-radius:10px;
+      border-top-left-radius:0;
+    }
+    .sec02 .grid-container{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      margin-top:24px;
+      margin-bottom:48px;
+    }
+    .sec02 .main-list-tit{
+      width:158px;
+      padding:7px 0;
+      font-family:'Roboto';
+      font-weight:700;
+      text-align:center;
+      text-transform:uppercase;
+      border:2px solid var(--main-color02);
+      border-radius:30px;
+      color:var(--main-color02);
+    }
+    .sec02 .list-tit{
+      font-family:'Roboto';
+      text-transform:uppercase;
+    }
+    .sec02 .list-txt{
+      transform:translate(-230px,-2px);
+    }
+    /* 목록 그리드 적용 안 됨 */
+
+    /* SEC03 PUBLISHING01 */
+    .sec03{background:rgb(255,255,0,0.5);}
+    .sec03 .publishing-a{
+      padding:50px;
+      padding-right:94px;
+      background:#fff;
+      border-radius:10px;
+      border-top-left-radius:0;
+    }
+    .sec03 h4{
+      display:block;
+      width:158px;
+      font-weight:700;
+      text-align:center;
+      text-transform:uppercase;
+      border:2px solid var(--main-color02);
+      border-radius:30px;
+      color:var(--main-color02);
+    }
+    .sec03 .btn-view{
+      width:114px;
+      height:30px;
+      padding:5px 40px;
+      font-size:14px;
+      text-transform:uppercase;
+      background:var(--main-color01);
+      color:#fff;
+    }
+    
+
+
+
+    .sec04{background:lightgreen;}
+    .sec05{background:lightblue;}
+  </style>
+</head>
+
+<body>
+  <section id="wrap">
+    <header id="header">
+      <h1><a href="./index.html">이하늘의 개인 포트폴리오</a></h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#intro">1</a></li>
+          <li><a href="#about">2</a></li>
+          <li><a href="#publishing01">3</a></li>
+          <li><a href="graphics01">5</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="sec sec01 intro" id="intro">
+      <div class="container">
+        <h2 class="sec-tit">FIRST</h2>
+        <nav class="sec-nav">
+          <ul>
+            <li class="active">home</li>
+            <li>about</li>
+            <li>publishing</li>
+            <li>grapics</li>
+          </ul>
+        </nav>
+        <div class="intro-txt">
+          <p class="top-txt">welcome to my portfolio !</p>
+          <p class="main-tit01">i am</p>
+          <p class="main-tit02">
+            <span>haneul</span>
+          </p>
+          <p class="bottom-txt">
+            <ul class="bottom-txt">
+              <li>2023 web portfolio</li>
+              <li>made by</li>
+              <li>haneul lee</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="sec sec02 about" id="about">
+      <div class="container">
+        <h2>ABOUT</h2>
+        <nav class="sec-nav">
+          <ul>
+            <li>home</li>
+            <li class="active">about</li>
+            <li>publishing</li>
+            <li>grapics</li>
+          </ul>
+        </nav>
+        <div class="img-box"><img src="./images/girl.jpg" alt="profil pic"></div>
+        <div class="about-txt">
+          <p class="profil">
+            <p class="main-list-tit">profil</p>
+            <div class="grid-container">
+              <ul class="list-tit">
+                <li>name</li>
+                <li>birth</li>
+                <li>mail</li>
+              </ul>
+              <ul class="list-txt">
+                <li>이하늘</li>
+                <li>2002.06.01</li>
+                <li>dlgksmf8336@naver.com</li>
+              </ul>
+            </div>
+          </p>
+          <p class="certificate">
+            <p class="main-list-tit">certificate</p>
+            <div class="grid-container">
+              <ul class="list-tit">
+                <li>2023</li>
+                <li>2021</li>
+              </ul>
+              <ul class="list-txt">
+                <li>GTQ 1급</li>
+                <li>MOS PowerPoint</li>
+                <li>MOS Excel</li>
+              </ul>
+            </div>
+          </p>
+          <p class="education">
+            <p class="main-list-tit">education</p>
+            <div class="grid-container">
+              <ul class="list-tit">
+                <li>2024</li>
+                <br>
+                <li>2021</li>
+              </ul>
+              <ul class="list-txt">
+                <li>웹표준 반응형 웹디자인&웹퍼블리셔 양성과정C 수료</li>
+                <li>서울신학대학교 글로벌경영학과 재학중</li>
+              </ul>
+            </div>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="sec sec03 publishing publishing01" id="publishing publishing01">
+      <div class="container">
+        <h2>PUBLISHING01</h2>
+        <nav class="sec-nav">
+          <ul>
+            <li>home</li>
+            <li>about</li>
+            <li class="active">publishing</li>
+            <li>grapics</li>
+          </ul>
+        </nav>
+        <article class="art-web-publishing">
+          <h3>WEB PUBLISHUNG</h3>
+          <div class="publishing-a">
+            <img src="" alt="publishing-image01">
+            <h4>웹사이트 01</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, vel?</p>
+            <div class="btn-view">
+              <span>view</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="sec sec04 publishing publishing02" id="publishing publishing02">
+      <div class="container">
+        <article class="art-web-publishing">
+          <h3>WEB PUBLISHUNG</h3>
+          <div class="publishing-a">
+            <img src="" alt="publishing-image01">
+            <h4>웹사이트 02</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, vel?</p>
+            <div class="btn-view">
+              <span>view</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="sec sec05 grapics grapics01" id="grapics grapics01">
+      <div class="container">
+        <h2>GRAPICS01</h2>
+        <article class="art-design">
+          <h3>DESIGN</h3>
+          <div class="poster-design">
+            <h4>POSTER DESIGN</h4>
+            <ul>
+              <li><img src="" alt="poster01"></li>
+              <li><img src="" alt="poster02"></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="sec sec06 grapics grapics02" id="grapics grapics02">
+      <div class="container">
+        <h2>GRAPICS02</h2>
+        <article class="art-design">
+          <h3>DESIGN</h3>
+          <div class="poster-design">
+            <h4>CARDNEWS DESIGN</h4>
+            <ul>
+              <li><img src="" alt="cardnews01"></li>
+              <li><img src="" alt="cardnews02"></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+    <footer id="footer">
+      <address>HANEUL LEE</address>
+    </footer>
+  </section>
+
+
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/swiper-bundle.min.js"></script>
+
+  <script>
+    // const swiper = new Swiper(".main-swiper",{
+    //   direction:"vertical",
+    //   slidesPerView:1,
+    //   mousewheel:true,
+    //   pagination: {
+    //     el:".swiper-pagination",
+    //     clickable:true,
+    //   },
+    // });
+  </script>
+  
+</body>
+
+</html>
