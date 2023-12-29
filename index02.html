@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="./index02_files/reset.css">
+  <link rel="stylesheet" href="./index02_files/style.css">
+  <link rel="stylesheet" href="./index02_files/swiper-bundle.min.css">
+  <title>HANEUL'S PORTFOLIO</title>
+  <style>
+    :root{
+      --main-color01:#ee5050;
+      --main-color02:#0948b3;
+      font-family:'Noto Sans KR',sans-serif;
+      font-weight:500;
+      font-size:16px;
+      color:#111;
+      line-height:1.2;
+    }
+    .container{
+      max-width:1280px;
+      margin:0 auto;
+      padding:100px;
+      /* height:920px; */
+    }
+    #wrap{
+      position:relative;
+      overflow:hidden;
+    }
+    h1,h2,h3,h4,h5,h6{display:none;}
+    #header{display:none;}
+
+    /* NAV */
+    nav ul{
+      display:grid;
+      grid-template-columns:repeat(4,auto);
+      width:501px;
+      height:50px;
+      text-align:center;
+      text-transform:uppercase;
+    }
+    nav li{
+      padding-top:13px;
+      font-family:'Roboto';
+      font-size:20px;
+      border:1px solid #000;
+      background:#fff;
+      border-top-left-radius:10px;
+      border-top-right-radius:10px;
+      z-index:5;
+    }
+    nav li.active{
+      border-bottom:none;
+      background:var(--main-color01);
+      font-weight:700;
+      color:#fff;
+    }
+
+    /* SLIDE 01 INTRO */
+    .sec01{
+      font-family:'Roboto';
+      background:var(--main-color02);
+    }
+    .sec01 .intro-txt{
+      padding:100px 114px;
+      text-align:center;
+      text-transform:uppercase;
+      background:#fff;
+      border-radius:10px;
+      border-top-left-radius:0;
+      border-top:20px solid #555;
+      transform:translateY(-20px);
+    }
+    .sec01 .top-txt{
+      margin:0 auto;
+      padding:7px 0;
+      font-weight:700;
+      font-size:16px;
+      border:3px solid var(--main-color02);
+      border-radius:30px;
+      color:var(--main-color02);
+    }
+    .sec01 .main-tit01{
+      margin-top:70px;
+      font-weight:700;
+      font-size:80px;
+      text-align:center;
+    }
+    .sec01 .main-tit02{
+      font-weight:900;
+      font-size:130px;
+      margin:90px auto;
+      margin-top:0;
+    }
+    .sec01 .bottom-txt{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      color:var(--main-color02);
+      position:relative;
+    }
+    .sec01 .bottom-txt li:nth-child(1)::after,.sec01 .bottom-txt li:nth-child(2)::after,
+    .sec01 .m-bottom-txt li:nth-child(1):after{
+      content:'';
+      display:inline-block;
+      position:absolute;
+      left:37%;
+      top:50%;
+      transform:translate(-37%,-50%);
+      width:20px;
+      height:1px;
+      background:var(--main-color02);
+    }
+    .sec01 .bottom-txt li:nth-child(2)::after{
+      left:67%;
+      transform:translate(-67%,-50%);
+    }
+    .sec01 .m-bottom-txt{
+      display:none;
+      font-size:11px;
+      color:var(--main-color02);
+    }
+    .sec01 .m-bottom-txt li:nth-child(1):after{
+      display:none;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+    }
+
+    /* SEC02 ABOUT */
+    .sec02{background:rgb(255,165,0,0.7);}
+    .sec02 .container{
+      position:relative;
+      
+    }
+    .sec02 .grid-wrap{
+      padding:100px;
+      background:#fff;
+    }
+    .sec02 .grid-container{
+      display:grid;
+      /* grid-template-columns:1fr auto auto; */
+      grid-template-columns:repeat(3,auto);
+      padding:0;
+    }
+    .sec02 .img-box{
+      grid-area:1/1/3/2;
+      width:300px;
+      height:300px;
+      margin-right:114px;
+      background:var(--main-color02);
+    }
+    .sec02 .about-txt{
+      height:570px;
+      padding:135px 114px;
+      background:#fff;
+      border-radius:10px;
+      border-top-left-radius:0;
+    }
+
+    .sec02 .education{
+      grid-area:2/2/4/3;
+      transform:translateY(-50%);
+    }
+    .sec02 .main-list-tit{
+      width:158px;
+      margin-bottom:24px;
+      padding:7px 0;
+      font-family:'Roboto';
+      font-weight:700;
+      text-align:center;
+      text-transform:uppercase;
+      border:2px solid var(--main-color02);
+      border-radius:30px;
+      color:var(--main-color02);
+    }
+    .sec02 .list-tit{
+      font-family:'Roboto';
+      text-transform:uppercase;
+    }
+
+    /* SEC03 PUBLISHING01 */
+    .sec03{background:rgb(255,255,0,0.5);}
+    .sec03 .grid-container{
+      display:grid;
+      grid-template-columns:repeat(2,auto);
+    }
+    .sec03 .publishing-a{
+      padding:50px;
+      padding-right:94px;
+      background:#fff;
+      border-radius:10px;
+      border-top-left-radius:0;
+    }
+    .sec03 h4{
+      display:block;
+      width:158px;
+      padding:7px 0;
+      font-weight:700;
+      text-align:center;
+      text-transform:uppercase;
+      border:2px solid var(--main-color02);
+      border-radius:30px;
+      color:var(--main-color02);
+    }
+    .sec03 .img-box{
+      width:640px;
+      height:470px;
+      background:var(--main-color02);
+    }
+    .sec03 .explanation{
+      margin:94px 71px;
+
+    }
+    .sec03 .summary{
+      margin-top:36px;
+      margin-bottom:100px;
+    }
+    /* .sec03 .summary::after{
+      content:'';
+      display:block;
+      width:20px;
+      height:1px;
+      background:var(--main-color02);
+    } */
+    .sec03 .btn-view{
+      width:114px;
+      height:30px;
+      padding:7px 40px;
+      font-family:'Roboto';
+      font-size:14px;
+      text-transform:uppercase;
+      background:var(--main-color01);
+      color:#fff;
+    }
+    
+
+
+
+    .sec04{background:lightgreen;}
+
+    /* SEC05 GRAPICS */
+    .sec05{background:lightblue;}
+    .sec05 .art-design{
+      width:1080px;
+      height:570px;
+      padding:50px;
+      background:#fff;
+      border-radius:10px;
+      border-top-left-radius:0;
+    }
+    .sec05 .img-box{
+      display:grid;
+      grid-template-columns:repeat(3,auto);
+      width:340px;
+      height:470px;
+      background:var(--main-color02);
+    }
+    .sec05 .d-img-box{
+      width:226px;
+      height:226px;
+      padding-top:18px;
+      background:var(--main-color02);
+    }
+
+    .sec06{display:none;}
+    #footer{display:none;}
+
+
+
+
+    /* 모바일 기준 */
+    @media (max-width:360px) {
+      :root{
+        font-size:10px;
+      }
+      .container{
+        padding:80px 50px;
+      }
+      nav ul{
+        width:300px;
+        height:30px;
+      }
+      nav li{
+        padding-top:10px;
+        font-size:12px;
+      }
+      .sec01 .intro-txt{
+        width:300px;
+        padding:60px 20px;
+        border:none;
+      }
+      .sec01 .top-txt{
+        font-size:11px;
+        border:1px solid var(--main-color02);
+      }
+      .sec01 .main-tit01{
+        margin-top:30px;
+        font-size:30px;
+      }
+      .sec01 .main-tit02{
+        margin-bottom:30px;
+        font-size:50px;
+      }
+      .sec01 .standard-txt{
+        display:none;
+      }
+      .sec01 .m-bottom-txt,.sec01 .m-bottom-txt li:nth-child(1):after{
+        display:block;
+      }
+      
+    }
+
+
+    /* 태블릿 기준 */
+    @media (max-width:768px) {
+      :root{
+        font-size:14px;
+      }
+      .container{
+        padding:100px 50px;
+      }
+      nav ul{
+        width:424px;
+        height:40px;
+      }
+      nav li{
+        padding-top:10px;
+        font-size:16px;
+      }
+      .sec01 .intro-txt{
+        padding:50px;
+      }
+      .sec01 .top-txt{
+        font-size:14px;
+        border:2px solid var(--main-color02);
+      }
+      .sec01 .main-tit01{
+        margin-top:50px;
+        font-size:60px;
+      }
+      .sec01 .main-tit02{
+        font-size:110px;
+        margin-bottom:71px;
+      }
+    }
+
+
+
+
+
+
+  </style>
+</head>
+
+<body cz-shortcut-listen="true">
+  <section id="wrap">
+    <header id="header">
+      <h1><a href="http://127.0.0.1:5500/index.html">이하늘의 개인 포트폴리오</a></h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="http://127.0.0.1:5500/index.html#intro">1</a></li>
+          <li><a href="http://127.0.0.1:5500/index.html#about">2</a></li>
+          <li><a href="http://127.0.0.1:5500/index.html#publishing01">3</a></li>
+          <li><a href="http://127.0.0.1:5500/graphics01">5</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="sec sec01 intro" id="intro">
+      <div class="container">
+        <h2 class="sec-tit">FIRST</h2>
+        <nav class="sec-nav">
+          <ul>
+            <li class="active">home</li>
+            <li>about</li>
+            <li>publishing</li>
+            <li>grapics</li>
+          </ul>
+        </nav>
+        <div class="intro-txt">
+          <p class="top-txt">welcome to my portfolio !</p>
+          <p class="main-tit01">i am</p>
+          <p class="main-tit02">
+            <span>haneul</span>
+          </p>
+          <p class="bottom-txt">
+            </p><ul class="bottom-txt">
+              <li class="standard-txt">2023 web portfolio</li>
+              <li class="standard-txt">made by</li>
+              <li class="standard-txt">haneul lee</li>
+              <li class="m-bottom-txt">2023 web portfolio</li>
+              <li class="m-bottom-txt">made by haneul lee</li>
+            </ul>
+          <p></p>
+        </div>
+      </div>
+    </section>
+    <section class="sec sec02 about" id="about">
+      <div class="container">
+        <h2>ABOUT</h2>
+        <nav class="sec-nav">
+          <ul>
+            <li>home</li>
+            <li class="active">about</li>
+            <li>publishing</li>
+            <li>grapics</li>
+          </ul>
+        </nav>
+        <div class="grid-wrap" style="padding:100px;background:#fff;">
+          <div class="grid-container about-txt" style="padding:0;grid-template-columns: 1fr auto auto;">
+            <div class="img-box" style="grid-area:1/1/3/2;"></div>
+            <div class="profile" style="
+    padding-bottom: 50px;
+">
+              <p class="main-list-tit" style="
+    margin-bottom: 20px;
+">profile</p>
+              <div class="grid-container" style="
+    grid-template-columns: auto auto;
+    gap: 24px;
+">
+                <ul class="list-tit">
+                  <li>name</li>
+                  <li>birth</li>
+                  <li>mail</li>
+                </ul>
+                <ul class="list-txt">
+                  <li>이하늘</li>
+                  <li>2002.06.01</li>
+                  <li>dlgksmf8336@naver.com</li>
+                </ul>
+              </div>
+            </div>
+            <div class="certificate">
+              <p class="main-list-tit">certificate</p>
+              <div class="grid-container">
+                <ul class="list-tit">
+                  <li>2023</li>
+                  <li>2021</li>
+                </ul>
+                <ul class="list-txt">
+                  <li>GTQ 1급</li>
+                  <li>MOS PowerPoint</li>
+                  <li>MOS Excel</li>
+                </ul>
+              </div>
+            </div>
+            <div class="education" style="grid-area:2/2/3/4;transform:none">
+              <p class="main-list-tit">education</p>
+              <div class="grid-container">
+                <ul class="list-tit">
+                  <li>2024</li>
+                  <li>2021</li>
+                </ul>
+                <ul class="list-txt">
+                  <li>인천IT직업능력개발학원 웹표준 반응형 웹디자인&amp;웹퍼블리셔 양성과정C 수료</li>
+                  <li>서울신학대학교 글로벌경영학과 재학중</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec sec03 publishing publishing01" id="publishing publishing01">
+      <div class="container">
+        <h2>PUBLISHING01</h2>
+        <nav class="sec-nav">
+          <ul>
+            <li>home</li>
+            <li>about</li>
+            <li class="active">publishing</li>
+            <li>grapics</li>
+          </ul>
+        </nav>
+        <article class="art-web-publishing">
+          <h3>WEB PUBLISHUNG</h3>
+          <div class="grid-container publishing-a">
+            <div class="img-box"></div>
+            <div class="explanation">
+              <h4>웹사이트 01</h4>
+              <p class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, vel?</p>
+              <div class="btn-view">
+                <span>view</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="sec sec04 publishing publishing02" id="publishing publishing02">
+      <div class="container">
+        <nav class="sec-nav">
+          <ul>
+            <li>home</li>
+            <li>about</li>
+            <li class="active">publishing</li>
+            <li>grapics</li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <section class="sec sec05 grapics grapics01" id="grapics grapics01">
+      <div class="container">
+        <h2>GRAPICS01</h2>
+        <nav class="sec-nav">
+          <ul>
+            <li>home</li>
+            <li>about</li>
+            <li>publishing</li>
+            <li class="active">grapics</li>
+          </ul>
+        </nav>
+        <article class="art-design">
+          <h3>DESIGN</h3>
+          <div class="grapic-design poster-design">
+            <h4>GRAPIC DESIGN01</h4>
+            <ul>
+              <li><div class="img-box"></div></li>
+              <li><div class="img-box"></div></li>
+              <li><div class="img-box d-img-box"></div></li>
+              <li><div class="img-box d-img-box"></div></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="sec sec06 grapics grapics02" id="grapics grapics02">
+      <div class="container">
+        <h2>GRAPICS02</h2>
+        <nav class="sec-nav">
+          <ul>
+            <li>home</li>
+            <li>about</li>
+            <li class="active">publishing</li>
+            <li>grapics</li>
+          </ul>
+        </nav>
+        <article class="art-design">
+          <h3>DESIGN</h3>
+          <div class="grapic-design cardnews-design">
+            <h4>GRAPIC DESIGN02</h4>
+            <ul>
+              <li><div class="img-box"></div></li>
+              <li><div class="img-box"></div></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+    <footer id="footer">
+      <address>HANEUL LEE</address>
+    </footer>
+  </section>
+
+
+
+  <script src="./index02_files/jquery.min.js.다운로드"></script>
+  <script src="./index02_files/swiper-bundle.min.js.다운로드"></script>
+
+  <script>
+    // const swiper = new Swiper(".main-swiper",{
+    //   direction:"vertical",
+    //   slidesPerView:1,
+    //   mousewheel:true,
+    //   pagination: {
+    //     el:".swiper-pagination",
+    //     clickable:true,
+    //   },
+    // });
+  </script>
+  
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+<div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">Drag and Drop</div>
+                    <div class="fatkun-desc">The image will be downloaded</div>
+                </div>
+            </div>
+    </div></body></html>
