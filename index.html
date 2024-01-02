@@ -61,6 +61,10 @@
     /* SLIDE 01 INTRO */
     .sec01{
       font-family:'Roboto';
+      padding:100px 0;
+    }
+    .sec01 .container{
+      padding:0 30px;
     }
     .sec01 .intro-txt{
       padding:100px 114px;
@@ -130,6 +134,10 @@
     /* SEC02 ABOUT */
     .sec02 .container{
       position:relative;
+      padding:100px 0;
+    }
+    .sec02 .container{
+      padding:0 30px;
     }
     .sec02 .about-txt{
       display:grid;
@@ -179,6 +187,12 @@
     }
 
     /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
+    .sec03,.sec04{
+      padding:100px 0;
+    }
+    .sec03 .container,.sec04 .container{
+      padding:0 30px;
+    }
     .sec03 .grid-container,.sec04 .grid-container{
       display:grid;
       grid-template-columns:repeat(2,auto);
@@ -227,7 +241,7 @@
       background:var(--main-color02);
       position:absolute;
       left:50%;
-      top:175px;
+      top:150%;
       transform:translateX(-50%);
     }
     .sec03 .btn-view,.sec04 .btn-view{
@@ -246,6 +260,12 @@
     }
 
     /* SEC05 GRAPICS01 */
+    .sec05{
+      padding:100px 0;
+    }
+    .sec05 .container{
+      padding:0 30px;
+    }
     .sec05 .art-design{
       padding:100px 50px;
       background:#fff;
@@ -254,15 +274,12 @@
       border-top:20px solid #555;
       transform:translateY(-20px);
     }
-    .sec05 .grid-wrap{
+    .sec05 .grid-container{
       display:grid;
       grid-template-columns:1fr 1fr auto;
     }
     .sec05 .img-box{
       background:var(--main-color02);
-    }
-    .sec05 .grid-container{
-      
     }
     .sec05 .poster{
       width:340px;
@@ -281,9 +298,11 @@
 
     /* SEC06 GRAPICS02 (데스크탑 X / 태블릿, 모바일 O) */
 
-    .sec06{display:none;}
+    .sec06{
+      display:none;
+    }
     .sec06 .art-design{
-      padding:100px 50px;
+      padding:75px 40px;
       background:#fff;
       border-radius:10px;
       border-top-left-radius:0;
@@ -293,6 +312,7 @@
     .sec06 .grid-container{
       display:grid;
       grid-template-columns:repeat(2,auto);
+      gap:2em;
     }
     .sec06 .cardnews{
       width:273px;
@@ -427,7 +447,7 @@
         top:145px;
       }
 
-      /* SEC05 GRAPICS */
+      /* SEC05 GRAPICS01 */
       .sec05 .art-design{
         padding:50px 94px;
       }
@@ -442,6 +462,11 @@
       }
       .sec05 .d-img-box{
         display:none;
+      }
+
+      /* SEC06 GRAPICS02 */
+      .sec06{
+        display:block;
       }
     }
 
@@ -553,7 +578,7 @@
             <div class="img-box"></div>
             <div class="explanation">
               <h4>웹사이트 01</h4>
-              <p class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, vel?</p>
+              <p class="summary">Lorem ipsum dolor sit amet<br>consectetur adipisicing elit.<br>Laboriosam, vel?</p>
               <div class="btn-view">
                 <span>view</span>
               </div>
@@ -578,7 +603,7 @@
             <div class="img-box"></div>
             <div class="explanation">
               <h4>웹사이트 02</h4>
-              <p class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, vel?</p>
+              <p class="summary">Lorem ipsum dolor sit amet<br>consectetur adipisicing elit.<br>Laboriosam, vel?</p>
               <div class="btn-view">
                 <span>view</span>
               </div>
@@ -602,11 +627,9 @@
           <h3>DESIGN</h3>
           <div class="grapic-design">
             <h4>GRAPIC DESIGN01</h4>
-            <div class="grid-wrap">
-              <div class="grid-container">
-                <div class="img-box poster poster01"></div>
-                <div class="img-box poster poster02"></div>
-              </div>
+            <div class="grid-container">
+              <div class="img-box poster poster01"></div>
+              <div class="img-box poster poster02"></div>
               <div class="img-box d-img-box d-img-box01"></div>
               <div class="img-box d-img-box d-img-box02"></div>
             </div>
