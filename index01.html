@@ -18,7 +18,6 @@
       color:#111;
       line-height:1.2;
       background:var(--main-color02);
-      scroll-behavior: smooth;
     }
     .container{
       max-width:1280px;
@@ -58,13 +57,7 @@
       font-weight:700;
       color:#fff;
     }
-    /* .sec{
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    } */
-    
+
     /* SLIDE 01 INTRO */
     .sec01{
       font-family:'Roboto';
@@ -280,8 +273,8 @@
       padding:0 30px;
     }
     .sec05 .art-design{
-      /* padding:50px; */
-      padding:8.9707254985%;
+      /* padding:100px 50px; */
+      padding:16.9707254985% 4.0983606557%;
       background:#fff;
       border-radius:10px;
       border-top-left-radius:0;
@@ -338,9 +331,11 @@
 
 
     @media (max-width:1148px) {
+
       .sec02 .about-txt{
         grid-template-columns:34.774194% 33.774194% 1fr;
       }
+
     }
 
     @media (max-width:1134px) {
@@ -415,8 +410,6 @@
         padding:50px;
       }
       .sec01 .top-txt{
-        /* margin:0 130px; */
-        margin:0 14.9769585253%
         font-size:14px;
         border:2px solid var(--main-color02);
       }
@@ -482,9 +475,6 @@
     }
 
     @media (max-width:600px) {
-      /* SEC01 INTRO */
-      .sec01 .standard-bottom-txt{}
-
       /* SEC02 ABOUT */
       .sec02 .about-txt{
         grid-template-columns:1.4fr 1fr;
@@ -596,7 +586,6 @@
         transform:translate(-50%,-50%);
       }
 
-
       /* SEC02 ABOUT */
       .sec02 .about-txt{
         align-items:center;
@@ -635,7 +624,7 @@
       }
 
       /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
-      .sec03 .grid-container,.sec04 .grid-container{
+      .sec03 .grid-container{
         grid-template-columns:1fr;
         row-gap:30px;
         padding:60px 20px;
@@ -708,13 +697,13 @@
     </header>
     <section class="sec sec01 intro" id="intro">
       <div class="container">
-        <h2 class="sec-tit">INTRO</h2>
+        <h2 class="sec-tit">FIRST</h2>
         <nav class="sec-nav">
           <ul>
-            <li class="active"><a href="#intro">home</a></li>
-            <li><a href="#about">about</a></li>
-            <li><a href="#publishing01">publishing</a></li>
-            <li><a href="#grapics01">grapics</a></li>
+            <li class="active">home</li>
+            <li>about</li>
+            <li>publishing</li>
+            <li>grapics</li>
           </ul>
         </nav>
         <div class="intro-txt">
@@ -724,9 +713,9 @@
             <span>haneul</span>
           </p>
           <ul class="bottom-txt">
-            <li class="standard-bottom-txt"><span>2023 </span><span>web portfolio</span></li>
-            <li class="standard-bottom-txt"><span>made </span><span>by</span></li>
-            <li class="standard-bottom-txt"><span>haneul </span><span>lee</span></li>
+            <li class="standard-bottom-txt">2023 web portfolio</li>
+            <li class="standard-bottom-txt">made by</li>
+            <li class="standard-bottom-txt">haneul lee</li>
             <li class="m-bottom-txt m-bottom-txt01"><span>2023 </span><span>web portfolio</span></li>
             <li class="m-bottom-txt m-bottom-txt02"><span>made by </span><span>haneul lee</span></li>
           </ul>
@@ -738,10 +727,10 @@
         <h2>ABOUT</h2>
         <nav class="sec-nav">
           <ul>
-            <li><a href="#intro">home</a></li>
-            <li class="active"><a href="#about">about</a></li>
-            <li><a href="#publishing01">publishing</a></li>
-            <li><a href="#grapics01">grapics</a></li>
+            <li>home</li>
+            <li class="active">about</li>
+            <li>publishing</li>
+            <li>grapics</li>
           </ul>
         </nav>
         <div class="about-txt">
@@ -779,15 +768,15 @@
         </div>
       </div>
     </section>
-    <section class="sec sec03 publishing publishing01" id="publishing01">
+    <section class="sec sec03 publishing publishing01" id="publishing publishing01">
       <div class="container">
         <h2>PUBLISHING01</h2>
         <nav class="sec-nav">
           <ul>
-            <li><a href="#intro">home</a></li>
-            <li><a href="#about">about</a></li>
-            <li class="active"><a href="#publishing01">publishing</a></li>
-            <li><a href="#grapics01">grapics</a></li>
+            <li>home</li>
+            <li>about</li>
+            <li class="active">publishing</li>
+            <li>grapics</li>
           </ul>
         </nav>
         <article class="art-web-publishing">
@@ -809,15 +798,15 @@
         </article>
       </div>
     </section>
-    <section class="sec sec04 publishing publishing02" id="publishing02">
+    <section class="sec sec04 publishing publishing02" id="publishing publishing02">
       <div class="container">
         <h2>PUBLISHING02</h2>
         <nav class="sec-nav">
           <ul>
-            <li><a href="#intro">home</a></li>
-            <li><a href="#about">about</a></li>
-            <li class="active"><a href="#publishing01">publishing</a></li>
-            <li><a href="#grapics01">grapics</a></li>
+            <li>home</li>
+            <li>about</li>
+            <li class="active">publishing</li>
+            <li>grapics</li>
           </ul>
         </nav>
         <article class="art-web-publishing">
@@ -839,15 +828,15 @@
         </article>
       </div>
     </section>
-    <section class="sec sec05 grapics grapics01" id="grapics01">
+    <section class="sec sec05 grapics grapics01" id="grapics grapics01">
       <div class="container">
         <h2>GRAPICS01</h2>
         <nav class="sec-nav">
           <ul>
-            <li><a href="#intro">home</a></li>
-            <li><a href="#about">about</a></li>
-            <li><a href="#publishing01">publishing</a></li>
-            <li class="active"><a href="#grapics01">grapics</a></li>
+            <li>home</li>
+            <li>about</li>
+            <li>publishing</li>
+            <li class="active">grapics</li>
           </ul>
         </nav>
         <article class="art-design">
@@ -864,15 +853,15 @@
         </article>
       </div>
     </section>
-    <section class="sec sec06 grapics grapics02" id="grapics02">
+    <section class="sec sec06 grapics grapics02" id="grapics grapics02">
       <div class="container">
         <h2>GRAPICS02</h2>
         <nav class="sec-nav">
           <ul>
-            <li><a href="#intro">home</a></li>
-            <li><a href="#about">about</a></li>
-            <li><a href="#publishing01">publishing</a></li>
-            <li class="active"><a href="#grapics01">grapics</a></li>
+            <li>home</li>
+            <li>about</li>
+            <li>publishing</li>
+            <li class="active">grapics</li>
           </ul>
         </nav>
         <article class="art-design">
