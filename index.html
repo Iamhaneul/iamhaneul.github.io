@@ -42,28 +42,50 @@
       text-transform:uppercase;
     }
     nav li{
+      padding:0 5.3475935829%;
       padding-top:13px;
       font-family:'Roboto';
       font-size:20px;
-      border:1px solid #000;
+      border:1px solid #555;
       background:#fff;
       border-top-left-radius:10px;
       border-top-right-radius:10px;
       z-index:5;
       cursor:pointer;
     }
+    nav li:nth-child(2){
+      transform:translateX(-10px);
+      z-index:3;
+    }
+    nav li:nth-child(3){
+      transform:translateX(-20px);
+      z-index:2;
+    }
+    nav li:nth-child(4){
+      transform:translateX(-30px);
+      z-index:1;
+    }
     nav li.active{
       border-bottom:none;
       background:var(--main-color01);
       font-weight:700;
       color:#fff;
+      z-index:10;
     }
+
     /* .sec{
       height:100vh;
       display:flex;
       justify-content:center;
       align-items:center;
     } */
+
+    /* GRAY LINE */
+    .sec01 .intro-txt,.sec02 .about-txt,.sec03 .publishing-a,.sec04 .publishing-b,.sec05 .art-design{
+      border-radius:10px;
+      border-top:20px solid #555;
+      transform:translateY(-20px);
+    }
     
     /* SLIDE 01 INTRO */
     .sec01{
@@ -79,10 +101,6 @@
       text-align:center;
       text-transform:uppercase;
       background:#fff;
-      border-radius:10px;
-      border-top-left-radius:0;
-      border-top:20px solid #555;
-      transform:translateY(-20px);
     }
     .sec01 .top-txt{
       margin:0 130px;
@@ -153,11 +171,7 @@
       grid-template-columns:36.7741935483871% 36.7741935483871% 1fr;
       /* padding:135px 114px; */
       padding:135px 9.344262295081967%;
-      border-top:20px solid #555;
-      transform:translateY(-20px);
       background:#fff;
-      border-radius:10px;
-      border-top-left-radius:0;
       line-height:2;
       gap:4em;
     }
@@ -212,14 +226,10 @@
       justify-content:start;
       align-items:center;
       padding:50px 4.0983606557%;
-      border-top:20px solid #555;
-      transform:translateY(-20px);
       gap:5%;
     }
     .sec03 .publishing-a,.sec04 .publishing-b{
       background:#fff;
-      border-radius:10px;
-      border-top-left-radius:0;
     }
     .sec03 h4,.sec04 h4{
       display:block;
@@ -283,10 +293,6 @@
       /* padding:50px; */
       padding:8.9707254985%;
       background:#fff;
-      border-radius:10px;
-      border-top-left-radius:0;
-      border-top:20px solid #555;
-      transform:translateY(-20px);
     }
     .sec05 .grid-container{
       display:grid;
@@ -316,7 +322,6 @@
       padding:16.9707254985% 4.0983606557%;
       background:#fff;
       border-radius:10px;
-      border-top-left-radius:0;
       border-top:20px solid #555;
       transform:translateY(-20px);
     }
@@ -410,13 +415,20 @@
         font-size:16px;
       }
 
+      /* GRAY LINE */
+      .sec01 .intro-txt,.sec02 .about-txt,.sec03 .publishing-a,.sec04 .publishing-b,.sec05 .art-design{
+        border-radius:8px;
+        border-top:16px solid #555;
+        transform:translateY(-16px);
+      }
+
       /* SEC01 INTRO */
       .sec01 .intro-txt{
         padding:50px;
       }
       .sec01 .top-txt{
         /* margin:0 130px; */
-        margin:0 14.9769585253%
+        margin:0 14.9769585253%;
         font-size:14px;
         border:2px solid var(--main-color02);
       }
@@ -433,8 +445,6 @@
       .sec02 .about-txt{
         grid-template-columns:35.03875968992248% 35.03875968992248% 1fr;
         padding:80px 4.451038575667656%;
-        border-top:16px solid #555;
-        transform:translateY(-16px);
         gap:1.5em;
       }
       .sec02 .img-box{
@@ -483,7 +493,20 @@
 
     @media (max-width:600px) {
       /* SEC01 INTRO */
-      .sec01 .standard-bottom-txt{}
+      .sec01 .standard-bottom-txt{
+        display:flex;
+        flex-flow:column nowrap;
+        text-align:center;
+      }
+      .sec01 .standard-bottom-txt01{
+        text-align:left;
+      }
+      .sec01 .standard-bottom-txt03{
+        text-align:right;
+      }
+      .sec01 .main-tit02{
+        font-size:90px;
+      }
 
       /* SEC02 ABOUT */
       .sec02 .about-txt{
@@ -531,7 +554,6 @@
 
 
 
-
     /* 모바일 기준 */
     @media (max-width:484px) {
       :root{
@@ -545,19 +567,22 @@
       nav ul{
         width:100%;
         height:30px;
+        min-width:290px;
       }
       nav li{
         padding-top:8px;
         font-size:12px;
       }
 
-      /* SEC01 INTRO */
-      .sec01 .intro-txt{
+      /* GRAY LINE */
+      .sec01 .intro-txt,.sec02 .about-txt,.sec03 .publishing-a,.sec04 .publishing-b,.sec05 .art-design,.sec06 .art-design{
         padding:60px 20px;
-        border:none;
-        border-top-right-radius:0;
-        transform:none;
+        border-top:8px solid #555;
+        border-radius:4px;
+        transform:translateY(-8px);
       }
+
+      /* SEC01 INTRO */
       .sec01 .top-txt{
         font-size:11px;
         border:1px solid var(--main-color02);
@@ -600,11 +625,7 @@
       /* SEC02 ABOUT */
       .sec02 .about-txt{
         align-items:center;
-        padding:60px 20px;
         gap:10px;
-        border:none;
-        border-top-right-radius:0;
-        transform:none;
       }
       .sec02 .about-txt li{
         gap:10%;
@@ -638,10 +659,6 @@
       .sec03 .grid-container,.sec04 .grid-container{
         grid-template-columns:1fr;
         row-gap:30px;
-        padding:60px 20px;
-        border:none;
-        border-top-right-radius:0;
-        transform:none;
       }
       .sec03 h4,.sec04 h4{
         padding:5px 31px;
@@ -661,20 +678,6 @@
         padding:5px 19px;
         font-size:8px;
       }
-
-      /* SEC05 GRAPICS01 */
-      .sec05 .art-design{
-        border:none;
-        border-top-right-radius:0;
-        transform:none;
-      }
-
-      /* SEC06 GRAPICS02 */
-      .sec06 .art-design{
-        border:none;
-        border-top-right-radius:0;
-        transform:none;
-      }
     }
 
     @media (max-width:370px) {
@@ -688,6 +691,7 @@
         text-align:right;
       }
     }
+
 
 
   </style>
@@ -724,9 +728,9 @@
             <span>haneul</span>
           </p>
           <ul class="bottom-txt">
-            <li class="standard-bottom-txt"><span>2023 </span><span>web portfolio</span></li>
-            <li class="standard-bottom-txt"><span>made </span><span>by</span></li>
-            <li class="standard-bottom-txt"><span>haneul </span><span>lee</span></li>
+            <li class="standard-bottom-txt standard-bottom-txt01"><span>2023 </span><span>web portfolio</span></li>
+            <li class="standard-bottom-txt standard-bottom-txt02"><span>made </span><span>by</span></li>
+            <li class="standard-bottom-txt standard-bottom-txt03"><span>haneul </span><span>lee</span></li>
             <li class="m-bottom-txt m-bottom-txt01"><span>2023 </span><span>web portfolio</span></li>
             <li class="m-bottom-txt m-bottom-txt02"><span>made by </span><span>haneul lee</span></li>
           </ul>
