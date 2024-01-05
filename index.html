@@ -55,6 +55,9 @@
       justify-content:center;
       align-items:center;
     }
+    .sec .container{
+      width:100%;
+    }
 
     /* NAV */
     nav ul{
@@ -77,7 +80,7 @@
       z-index:5;
       cursor:pointer;
     }
-    nav li:nth-child(2){
+    /* nav li:nth-child(2){
       transform:translateX(-10px);
       z-index:3;
     }
@@ -88,7 +91,7 @@
     nav li:nth-child(4){
       transform:translateX(-30px);
       z-index:1;
-    }
+    } */
     nav li.active{
       border-bottom:none;
       background:var(--main-color01);
@@ -107,7 +110,6 @@
     /* SLIDE 01 INTRO */
     .sec01{
       font-family:'Roboto';
-      padding:100px 0;
     }
     .sec01 .container{
       padding:0 30px;
@@ -177,7 +179,6 @@
     /* SEC02 ABOUT */
     .sec02{
       position:relative;
-      padding:100px 0;
     }
     .sec02 .container{
       padding:0 30px;
@@ -231,9 +232,6 @@
     }
 
     /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
-    .sec03,.sec04{
-      padding:100px 0;
-    }
     .sec03 .container,.sec04 .container{
       padding:0 30px;
     }
@@ -300,9 +298,6 @@
     }
 
     /* SEC05 GRAPICS01 */
-    .sec05{
-      padding:100px 0;
-    }
     .sec05 .container{
       padding:0 30px;
     }
@@ -483,7 +478,7 @@
 
       /* SEC06 GRAPICS02 */
       .sec06{
-        display:block;
+        display:flex;
       }
     }
 
@@ -572,7 +567,8 @@
       nav ul{
         width:100%;
         height:30px;
-        min-width:290px;
+        /* min-width:290px; */
+        min-width:260px;
       }
       nav li{
         padding-top:8px;
@@ -588,6 +584,9 @@
       }
 
       /* SEC01 INTRO */
+      .sec01 .intro-txt{
+        padding:153.5px 20px;
+      }
       .sec01 .top-txt{
         font-size:11px;
         border:1px solid var(--main-color02);
@@ -628,6 +627,7 @@
 
       /* SEC02 ABOUT */
       .sec02 .about-txt{
+        padding:82px 20px;
         align-items:center;
         gap:10px;
       }
@@ -682,6 +682,16 @@
         padding:5px 19px;
         font-size:8px;
       }
+
+      /* SEC05 GRAPICS01 */
+      .sec05 .art-design{
+        padding:121px 20px;
+      }
+
+      /* SEC06 GRAPICS02 */
+      .sec06 .art-design{
+        padding:138.5px 20px;
+      }
     }
 
     @media (max-width:370px) {
@@ -697,6 +707,10 @@
     }
     /* MEDIA QUERY END */
 
+    .sec02{
+      transform:translateX(100%);
+      transition:0.3s;
+    }
   </style>
 </head>
 
@@ -898,5 +912,19 @@
       <address>HANEUL LEE</address>
     </footer>
   </section>
+  
+  <script src="./js/jquery.min.js"></script>
+  <script>
+
+    $(window).scroll(function(){
+      let sec02Top = $('.sec02').offset().top;
+      let sec02Height = $('.sec02').height();
+      let winScrTop = $(this).scrollTop();      
+      if(winScrTop + sec02Height / 3 >= sec02Top){
+        $('.sec02').css({transform:'translateX(0)'})
+      }
+    })
+
+  </script>    
 </body>
 </html>
