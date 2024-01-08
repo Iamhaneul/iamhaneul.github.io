@@ -92,6 +92,10 @@
       transform:translateX(-30px);
       z-index:1;
     } */
+    nav li:hover{
+      color:var(--main-color01);
+      transition:0.2s;
+    }
     nav li.active{
       border-bottom:none;
       background:var(--main-color01);
@@ -105,6 +109,50 @@
       border-radius:10px;
       border-top:20px solid #555;
       transform:translateY(-20px);
+    }
+
+    /* MOVING-MOUSE & SCROLL DOWN */
+    .sec05 .moving-mouse{
+      display:none;
+    }
+    .sec03 .moving-mouse,.sec05 .moving-mouse{
+      position:relative;
+    }
+    .sec03 .mouse,.sec05 .mouse{
+      width:15px;
+      height:22px;
+      border-radius:10px;
+      border:2px solid #fff;
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      animation-name:moving;
+      animation-duration:1.5s;
+      animation-iteration-count:infinite;
+    }
+    .sec03 .mouse::after,.sec05 .mouse::after{
+      content:'';
+      display:block;
+      width:2px;
+      height:5px;
+      background:#fff;
+      position:absolute;
+      left:50%;
+      top:3px;
+      transform:translateX(-50%);
+    }
+    .sec03 .moving-mouse span,.sec05 .moving-mouse span{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:14px;
+      text-align:center;
+      text-transform:uppercase;
+      color:#fff;
+      transform:translateY(33px);
+      animation-name:main-color01;
+      animation-duration:1.5s;
+      animation-iteration-count:infinite;
     }
     
     /* SLIDE 01 INTRO */
@@ -234,6 +282,7 @@
     /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
     .sec03 .container,.sec04 .container{
       padding:0 30px;
+      position:relative;
     }
     .sec03 .grid-container,.sec04 .grid-container{
       display:grid;
@@ -254,9 +303,6 @@
       border:2px solid var(--main-color02);
       border-radius:30px;
       color:var(--main-color02);
-    }
-    .sec03 .img-box,.sec04 .img-box{
-      background:var(--main-color02);
     }
     .sec03 .explanation,.sec04 .explanation{
       display:flex;
@@ -427,6 +473,14 @@
         transform:translateY(-16px);
       }
 
+      /* MOVING-MOUSE & SCROLL DOWN */
+      .sec05 .moving-mouse{
+        display:block;
+      }
+      .sec03 .moving-mouse span,.sec05 .moving-mouse span{
+        font-size:12px;
+      }
+
       /* SEC01 INTRO */
       .sec01 .intro-txt{
         padding:50px;
@@ -464,6 +518,11 @@
       /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
       .sec03 .summary::after,.sec04 .summary::after{
         top:155%;
+      }
+      .sec03 .btn-view,.sec04 .btn-view{
+        width:94px;
+        padding:7px 33px;
+        font-size:12px;
       }
 
       /* SEC05 GRAPICS01 */
@@ -581,6 +640,11 @@
         border-top:8px solid #555;
         border-radius:4px;
         transform:translateY(-8px);
+      }
+
+      /* MOVING-MOUSE & SCROLL DOWN */
+      .sec03 .moving-mouse span,.sec05 .moving-mouse span{
+        font-size:8px;
       }
 
       /* SEC01 INTRO */
@@ -707,6 +771,18 @@
     }
     /* MEDIA QUERY END */
 
+    @keyframes moving{
+      0%{top:0;}
+      50%{top:5px;}
+      100%{top:0;}
+    }
+
+    @keyframes main-color01{
+      0%{color:#fff;}
+      50%{color:var(--main-color01);}
+      100%{color:#fff;}
+    }
+
     .sec02{
       transform:translateX(100%);
       transition:0.3s;
@@ -742,6 +818,9 @@
           <p class="top-txt">welcome to my portfolio !</p>
           <p class="main-tit01">i am</p>
           <p class="main-tit02">
+            <span>passionate</span>
+            <span>hard worker</span>
+            <span>friendly</span>
             <span>haneul</span>
           </p>
           <ul class="bottom-txt">
@@ -816,18 +895,22 @@
           <div class="grid-container publishing-a">
             <div class="item01">
               <div class="img-box">
-                <img src="./images/girl.jpg" alt="girl">
+                <img src="./images/img-megacoffee.png" alt="megacoffee">
               </div>
             </div>
             <div class="explanation">
-              <h4>웹사이트 01</h4>
-              <p class="summary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, unde.</p>
+              <h4>메가MGC커피</h4>
+              <p class="summary">메가MGC커피 공식 사이트를 클론 코딩하여 홈페이지와 내비게이션를 구현하였습니다.</p>
               <div class="btn-view">
-                <span><a href="#" target="_blank"></a>view</span>
+                <span><a href="https://github.com/Iamhaneul/mega-coffee" target="_blank"></a>view</span>
               </div>
             </div>
           </div>
         </article>
+        <div class="moving-mouse">
+          <div class="mouse"></div>
+          <span>please scroll down !</span>
+        </div>
       </div>
     </section>
     <section class="sec sec04 publishing publishing02" id="publishing02">
@@ -883,6 +966,10 @@
             </div>
           </div>
         </article>
+        <div class="moving-mouse">
+          <div class="mouse"></div>
+          <span>please scroll down !</span>
+        </div>
       </div>
     </section>
     <section class="sec sec06 grapics grapics02" id="grapics02">
@@ -924,6 +1011,8 @@
         $('.sec02').css({transform:'translateX(0)'})
       }
     })
+
+    let keywords = $('.sec01 .main-tit02 span');
 
   </script>    
 </body>
