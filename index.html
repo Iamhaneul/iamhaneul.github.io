@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="이하늘 포트폴리오 HANEUL'S PORTFOLIO">
   <meta name="twitter:description" content="안녕하세요. 본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다. © 2024 Lee, Ha-neul. All Rights Reserved.">
   <!-- FAVICON -->
-  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <!-- RESET STYLE & FONTS -->
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
@@ -818,10 +818,10 @@
           <p class="top-txt">welcome to my portfolio !</p>
           <p class="main-tit01">i am</p>
           <p class="main-tit02">
-            <span>passionate</span>
-            <span>hard worker</span>
-            <span>friendly</span>
-            <span>haneul</span>
+            <span class="keyword keyword01">passionate</span>
+            <span class="keyword keyword02">hard worker</span>
+            <span class="keyword keyword03">friendly</span>
+            <span class="keyword keyword04">haneul</span>
           </p>
           <ul class="bottom-txt">
             <li class="standard-bottom-txt standard-bottom-txt01"><span>2023 </span><span>web portfolio</span></li>
@@ -900,7 +900,7 @@
             </div>
             <div class="explanation">
               <h4>메가MGC커피</h4>
-              <p class="summary">메가MGC커피 공식 사이트를 클론 코딩하여 홈페이지와 내비게이션를 구현하였습니다.</p>
+              <p class="summary">메가MGC커피 공식 사이트를 클론 코딩하여 홈페이지와 내비게이션을 구현하였습니다.<br>(반응형 웹페이지)</p>
               <div class="btn-view">
                 <span><a href="https://github.com/Iamhaneul/mega-coffee" target="_blank"></a>view</span>
               </div>
@@ -1006,7 +1006,7 @@
     $(window).scroll(function(){
       let sec02Top = $('.sec02').offset().top;
       let sec02Height = $('.sec02').height();
-      let winScrTop = $(this).scrollTop();      
+      let winScrTop = $(this).scrollTop();
       if(winScrTop + sec02Height / 3 >= sec02Top){
         $('.sec02').css({transform:'translateX(0)'})
       }
@@ -1014,6 +1014,10 @@
 
     let keywords = $('.sec01 .main-tit02 span');
 
+    $(window).scroll(function(){
+
+    })
+    
   </script>    
 </body>
 </html>
