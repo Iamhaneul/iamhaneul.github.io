@@ -113,21 +113,6 @@
       transform:translateY(-20px);
     }
 
-    /* BEHIND-TXT */
-    /* .sec01 .behind-txt{
-      overflow:visible;
-      font-weight:900;
-      font-size:30px;
-      color:#062760;
-      text-shadow:2px 0 #000;
-      position:absolute;
-      left:50%;
-      top:50%;
-      transform:translate(-50%,-50%);
-      z-index:1 !important;
-    } */
-    
-
     /* MOVING-MOUSE & SCROLL DOWN */
     .sec05 .moving-mouse{
       display:none;
@@ -172,7 +157,7 @@
       animation-iteration-count:infinite;
     }
     
-    /* SLIDE 01 INTRO */
+    /* SEC 01 INTRO */
     .sec01{
       font-family:'Roboto';
     }
@@ -429,7 +414,14 @@
     #footer{display:none;}
 
     /* MEDIA QUERY START */
+    @media (max-width:1180px) {
+      /* SEC 01 INTRO */
+      .sec01 .keyword{
+        font-size:115px;
+      }
+    }
     @media (max-width:1148px) {
+      /* SEC02 ABOUT */
       .sec02 .about-txt{
         grid-template-columns:34.774194% 33.774194% 1fr;
       }
@@ -441,6 +433,9 @@
       }
     }
     @media (max-width:1060px) {
+      .sec01 .keyword{
+        font-size:100px;
+      }
       /* SEC02 ABOUT */
       .sec02 .about-txt{
         grid-template-columns:36.774194% 30.774194% 1fr;
@@ -450,6 +445,10 @@
       }
     }
     @media (max-width:960px) {
+      /* SEC 01 INTRO */
+      .sec01 .keyword{
+        font-size:80px;
+      }
       /* SEC02 ABOUT */
       .sec02 .about-txt{
         grid-template-columns:34.774194% 27.774194% 1fr;
@@ -470,7 +469,6 @@
         width:92%;
       }
     }
-
     @media (max-width:809px) {
       /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
       .sec03 .summary::after,.sec04 .summary::after{
@@ -572,10 +570,26 @@
       }
     }
 
+    @media (max-width:720px) {
+      /* SEC 01 INTRO */
+      .sec01 .keyword{
+        font-size:70px;
+      }
+    }
+
     @media (max-width:716px) {
       /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
       .sec03 .summary::after,.sec04 .summary::after{
         top:140%;
+      }
+    }
+    @media (max-width:650px) {
+      /* SEC 01 INTRO */
+      .sec01 .main-tit01{
+        font-size:50px;
+      }
+      .sec01 .keyword{
+        font-size:60px;
       }
     }
     @media (max-width:640px) {
@@ -635,6 +649,15 @@
       .sec02 .edu-n-cer{
         display:block;
         grid-area:2/1/3/3;
+      }
+    }
+    @media (max-width:580px) {
+      /* SEC 01 INTRO */
+      .sec01 .main-tit01{
+        font-size:35px;
+      }
+      .sec01 .keyword{
+        font-size:45px;
       }
     }
     @media (max-width:532px) {
@@ -789,6 +812,15 @@
       }
     }
 
+    @media (max-width:415px) {
+      /* SEC 01 INTRO */
+      .sec01 .main-tit01{
+        font-size:25px;
+      }
+      .sec01 .keyword{
+        font-size:30px;
+      }
+    }
     @media (max-width:370px) {
       .sec01 .m-bottom-txt span{
         display:block;
@@ -802,6 +834,11 @@
     }
     /* MEDIA QUERY END */
 
+    /* ANIMATION */
+    @keyframes moving-txt{
+      0%{left:120%;}
+      100%{left:-150%;}
+    }
     @keyframes moving{
       0%{top:0;}
       50%{top:5px;}
@@ -814,16 +851,40 @@
       100%{color:#fff;}
     }
 
+
     /* SCROLL EVENT */
-    .sec02,.sec03,.sec04,.sec05,.sec06{
-      transform:translateX(100%);
+    .sec01 .container{
+      transform:none !important;
+    }
+    .sec .container{
+      transform:translateX(200%);
       transition:0.5s;
     }
-    .sec02.active,.sec03.active,.sec04.active,.sec05.active,.sec06.active{
+    
+    .sec.active .container{
       transform:translateX(0);      
     }
 
 
+    /* BEHIND-TXT */
+    /* .intro-txt>*{
+      position: relative;
+      z-index:10;
+    }
+    .behind-txt{
+      font-weight:900;
+      font-size:200px;
+      color:#fff;
+      position:absolute;
+      z-index:1;
+      -webkit-text-stroke:rgb(9, 72, 179) 1px;
+      opacity:0.5;
+
+      animation-name:moving-txt;
+      animation-duration:20s;
+      animation-timing-function:linear;
+      animation-iteration-count:infinite;
+    } */
 
     
   </style>
@@ -831,6 +892,7 @@
 
 <body>
   <section id="wrap">
+    
     <header id="header">
       <h1><a href="http://127.0.0.1:5500/index.html">이하늘의 개인 포트폴리오</a></h1>
       <nav class="main-nav">
@@ -869,10 +931,8 @@
             <li class="m-bottom-txt m-bottom-txt01"><span>2023 </span><span>web portfolio</span></li>
             <li class="m-bottom-txt m-bottom-txt02"><span>made by </span><span>haneul lee</span></li>
           </ul>
+          <!-- <p class="behind-txt">안녕하세요</p> -->
         </div>
-        <!-- <div class="behind">
-          <p class="behind-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum recusandae tenetur enim sapiente unde harum?</p>
-        </div> -->
       </div>
     </section>
     <section class="sec sec02 about" id="about">
@@ -1055,6 +1115,8 @@
       let sec04Height = $('.sec04').height();
       let sec05Top = $('.sec05').offset().top;
       let sec05Height = $('.sec05').height();
+      let sec06Top = $('.sec06').offset().top;
+      let sec06Height = $('.sec06').height();
       let winScrTop = $(this).scrollTop();
       // console.log(winScrTop);
       if(winScrTop + sec02Height / 3 >= sec02Top){
