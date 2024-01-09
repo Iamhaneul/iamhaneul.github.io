@@ -206,16 +206,18 @@
       margin:90px auto;
       margin-top:0;
     }
-    .sec01 .keyword{
-      display:none;
-    }
-    .sec01 .keyword:nth-child(1){
-      color:var(--main-color01);
-      text-shadow:2px 2px #000;
-    }
-    .sec01 .keyword:nth-child(1),.sec01 .keyword.active{
-      display:block;
-    }
+      /* KEYWORD EVENT START */
+      .sec01 .keyword{
+        display:none;
+      }
+      .sec01 .keyword:nth-child(1){
+        color:var(--main-color01);
+        text-shadow:2px 2px #000;
+      }
+      .sec01 .keyword:nth-child(1),.sec01 .keyword.active{
+        display:block;
+      }
+      /* KEYWORD EVENT END */
     .sec01 .bottom-txt{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -354,7 +356,7 @@
       top:150%;
       transform:translateX(-50%);
     }
-    .sec03 button,.sec04 button{
+    .sec03 .btn-view,.sec04 .btn-view{
       width:114px;
       height:30px;
       padding:7px 40px;
@@ -364,9 +366,10 @@
       border:1px solid #555;
       cursor:pointer;
     }
-    .sec03 button:hover,.sec04 button:hover{
+    .sec03 .btn-view:hover,.sec04 .btn-view:hover{
       background:var(--main-color01);
       color:#fff;
+      transition:0.3s;
     }
 
 
@@ -810,6 +813,7 @@
       100%{color:#fff;}
     }
 
+    /* SCROLL EVENT */
     .sec02,.sec03,.sec04,.sec05,.sec06{
       transform:translateX(100%);
       transition:0.5s;
@@ -939,7 +943,7 @@
               <h4>메가MGC커피</h4>
               <p class="summary">메가MGC커피 공식 사이트를 클론 코딩하여 홈페이지와 내비게이션을 구현하였습니다.<br>(반응형 웹페이지)</p>
               <div class="btn-view">
-                <button><a href="https://github.com/Iamhaneul/mega-coffee" target="_blank"></a>view</button>
+                <span><a href="https://github.com/Iamhaneul/mega-coffee" target="_blank"></a>view</span>
               </div>
             </div>
           </div>
@@ -973,7 +977,7 @@
               <h4>웹사이트 02</h4>
               <p class="summary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, unde.</p>
               <div class="btn-view">
-                <button><a href="#">view</a></button>
+                <span><a href="#">view</a></span>
               </div>
             </div>
           </div>
@@ -1069,8 +1073,8 @@
       }
     })
 
+    // KEYWORD EVENT
       let idx = 1;
-      
       let loopKeyword = setInterval(function(){
         // console.log(idx++);
         $('.keyword').hide();
@@ -1078,7 +1082,7 @@
         if(idx>3){
           idx=0;
         }
-      },2500);
+      },2000);
 
   </script>    
 </body>
