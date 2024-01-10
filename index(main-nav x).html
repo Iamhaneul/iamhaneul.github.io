@@ -48,6 +48,7 @@
       overflow:hidden;
     }
     h1,h2,h3,h4,h5,h6{display:none;}
+    #header{display:none;}
 
     /* FULL PAGE */
     .sec{
@@ -58,51 +59,6 @@
     }
     .sec .container{
       width:100%;
-    }
-    
-    /* MAIN NAV ( MOBILE O / DESKTOP & TABLET X ) */
-    .main-nav{
-      display:none;
-      padding:5px 10px;
-      background:#fff;
-      position:fixed;
-      left:0;
-      right:0;
-      bottom:0;
-      z-index:9999999999;
-    }
-    .main-nav ul{
-      display:flex;
-      justify-content:space-around;
-      align-items: center;
-    }
-    .main-nav li{
-      width:auto;
-      height:auto;
-      margin:0;
-      border:none;
-      border-radius: 0;
-      padding:0;
-    }
-    .main-nav a{
-      display: inline-block;
-      width:25px;
-      height:25px;
-    }
-    .main-nav a span{
-      display:inline-block;
-      text-indent:-9999999999px;
-    }
-    .main-nav a .img-box{
-      display:inline-block;
-      width:100%;
-      height:100%;
-    }
-    .main-nav svg{
-      transform:translateY(-10px);
-    }
-    .main-nav li:hover svg{
-      fill:var(--main-color01);
     }
 
     /* NAV */
@@ -787,11 +743,6 @@
           min-width:320px;
         }
 
-        /* MAIN NAV */
-        .main-nav{
-          display:block;
-        }
-
         /* NAV */
         nav ul{
           width:100%;
@@ -969,16 +920,11 @@
 
 
     /* ANIMATION */
-    @keyframes moving-txt{
-      0%{left:120%;}
-      100%{left:-150%;}
-    }
     @keyframes moving{
       0%{top:0;}
       50%{top:5px;}
       100%{top:0;}
     }
-
     @keyframes main-color01{
       0%{color:#fff;}
       50%{color:var(--main-color01);}
@@ -1289,6 +1235,7 @@
         $('.sec06').addClass('active');
       }
     })
+    // SEC01 TRANSFORM EVENT (IT HAPPENS JUST ONE TIME WHEN WINDOW LOADS)
     setTimeout(function(){
       $('.sec01').addClass('active');
     },500)
