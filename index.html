@@ -200,7 +200,7 @@
         color:var(--main-color01);
         text-shadow:2px 2px #000;
       }
-      .sec01 .keyword:nth-child(2),.sec01 .keyword.active{
+      .sec01 .keyword:nth-child(1),.sec01 .keyword.active{
         display:inline-block;
       }
       /* KEYWORD EVENT END */
@@ -519,19 +519,21 @@
       }
     }
     @media (max-width:960px) {
-      /* SEC 01 INTRO */
-      .sec01 .main-tit01{
-        font-size:70px;
-      }
-      .sec01 .keyword{
-        font-size:80px;
-      }
       /* SEC02 ABOUT */
       .sec02 .about-txt{
         grid-template-columns:34.774194% 27.774194% 1fr;
       }
       .sec02 .img-box{
         width:94%;
+      }
+    }
+    @media (max-width:921px) {
+      /* SEC 01 INTRO */
+      .sec01 .main-tit01{
+        font-size:70px;
+      }
+      .sec01 .keyword{
+        font-size:82px;
       }
     }
     @media (max-width:900px) {
@@ -642,13 +644,22 @@
       }
       /* TABLET VER. END */
 
-    @media (max-width:650px) {
+    @media (max-width:735px) {
       /* SEC 01 INTRO */
       .sec01 .main-tit01{
         font-size:50px;
       }
       .sec01 .keyword{
-        font-size:60px;
+        font-size:70px;
+      }
+    }
+    @media (max-width:650px) {
+      /* SEC 01 INTRO */
+      .sec01 .main-tit01{
+        font-size:40px;
+      }
+      .sec01 .keyword{
+        font-size:70px;
       }
     }
     @media (max-width:640px) {
@@ -710,13 +721,13 @@
         grid-area:2/1/3/3;
       }
     }
-    @media (max-width:580px) {
+    @media (max-width:515px) {
       /* SEC 01 INTRO */
       .sec01 .main-tit01{
-        font-size:35px;
+        font-size:30px;
       }
       .sec01 .keyword{
-        font-size:45px;
+        font-size:55px;
       }
     }
 
@@ -871,16 +882,20 @@
         top:140%;
       }
     }
-    @media (max-width:415px) {
+    @media (max-width:430px) {
       /* SEC 01 INTRO */
       .sec01 .main-tit01{
-        font-size:25px;
+        font-size:20px;
       }
       .sec01 .keyword{
-        font-size:30px;
+        font-size:45px;
       }
     }
     @media (max-width:370px) {
+      /* SEC 01 INTRO */
+      .sec01 .keyword{
+        font-size:38px;
+      }
       .sec01 .m-bottom-txt span{
         display:block;
       }
@@ -891,6 +906,7 @@
         text-align:right;
       }
     }
+
     /* MEDIA QUERY END */
 
 
@@ -1191,15 +1207,15 @@
     })
 
     // KEYWORD EVENT
-      // let idx = 1;
-      // let loopKeyword = setInterval(function(){
-      //   // console.log(idx++);
-      //   $('.keyword').hide();
-      //   $('.keyword').eq(idx++).fadeIn(800);
-      //   if(idx>3){
-      //     idx=0;
-      //   }
-      // },2000);
+      let idx = 1;
+      let loopKeyword = setInterval(function(){
+        // console.log(idx++);
+        $('.keyword').hide();
+        $('.keyword').eq(idx++).fadeIn(800);
+        if(idx>3){
+          idx=0;
+        }
+      },2000);
 
   </script>    
 </body>
