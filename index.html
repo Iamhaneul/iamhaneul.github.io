@@ -344,7 +344,7 @@
       transform:translateX(-50%);
     }
       /* BUTTON STYLE START */
-      .custom-btn{
+      .btn{
         color:#fff;
         border-radius:5px;
         font-family:'Roboto',sans-serif;
@@ -353,14 +353,11 @@
         background:transparent;
         cursor:pointer;
         transition:all 0.3s ease;
-        position:relative;
         display:inline-block;
         box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
         7px 7px 20px 0px rgba(0,0,0,.1),
         4px 4px 5px 0px rgba(0,0,0,.1);
         outline:none;
-      }
-      .btn{
         position:relative;
         bottom:20px;
         border:none;
@@ -515,6 +512,12 @@
         width:96%;
       }
     }
+    @media (max-width:1051px) {
+      /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
+      .sec03 .summary::after,.sec04 .summary::after{
+        top:140%;
+      }
+    }
     @media (max-width:960px) {
       /* SEC 01 INTRO */
       .sec01 .main-tit01{
@@ -541,12 +544,6 @@
       }
       .sec02 .img-box{
         width:92%;
-      }
-    }
-    @media (max-width:809px) {
-      /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
-      .sec03 .summary::after,.sec04 .summary::after{
-        top:135%;
       }
     }
 
@@ -620,16 +617,13 @@
 
         /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
         .sec03 .summary::after,.sec04 .summary::after{
-          top:155%;
+          width:35px;
+          top:140%;
         }
         .btn{
-          transform:scale(0.8);
-        }
-        /* .sec03 .btn-view,.sec04 .btn-view{
-          width:94px;
-          padding:7px 33px;
           font-size:12px;
-        } */
+          transform:scale(0.7);
+        }
 
         /* SEC05 GRAPICS01 */
         .sec05 .grid-container{
@@ -648,19 +642,6 @@
       }
       /* TABLET VER. END */
 
-    @media (max-width:720px) {
-      /* SEC 01 INTRO */
-      .sec01 .keyword{
-        font-size:70px;
-      }
-    }
-
-    @media (max-width:716px) {
-      /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
-      .sec03 .summary::after,.sec04 .summary::after{
-        top:140%;
-      }
-    }
     @media (max-width:650px) {
       /* SEC 01 INTRO */
       .sec01 .main-tit01{
@@ -736,12 +717,6 @@
       }
       .sec01 .keyword{
         font-size:45px;
-      }
-    }
-    @media (max-width:532px) {
-      /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
-      .sec03 .summary::after,.sec04 .summary::after{
-        top:130%;
       }
     }
 
@@ -870,14 +845,13 @@
           margin-bottom:50px;
         }
         .sec03 .summary::after,.sec04 .summary::after{
+          width:20px;
           top:160%;
         }
-        /* .sec03 .btn-view,.sec04 .btn-view{
-          width:60px;
-          height:19px;
-          padding:5px 19px;
+        .btn{
           font-size:8px;
-        } */
+          transform:scale(0.4);
+        }
 
         /* SEC05 GRAPICS01 */
         .sec05 .art-design{
@@ -891,6 +865,12 @@
       }
       /* MOBILE VER. END */
 
+    @media (max-width:457px) {
+      /* SEC03 PUBLISHING01 & SEC04 PUBLISHING02 */
+      .sec03 .summary::after,.sec04 .summary::after{
+        top:140%;
+      }
+    }
     @media (max-width:415px) {
       /* SEC 01 INTRO */
       .sec01 .main-tit01{
@@ -1081,9 +1061,7 @@
             <div class="explanation">
               <h4>메가MGC커피</h4>
               <p class="summary">메가MGC커피 공식 사이트를 클론 코딩하여 홈페이지와 내비게이션을 구현하였습니다.<br>(반응형 웹페이지)</p>
-              <div class="btn-view">
-                <button class="custom-btn btn"><span>click !</span><span>view more</span></button>
-              </div>
+              <button class="btn"><a href="https://github.com/Iamhaneul/mega-coffee" target="_blank"><span>click !</span><span>view more</span></a></button>
             </div>
           </div>
         </article>
@@ -1115,9 +1093,7 @@
             <div class="explanation">
               <h4>웹사이트 02</h4>
               <p class="summary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, unde.</p>
-              <div class="btn-view">
-                <span><a href="#">view</a></span>
-              </div>
+              <button class="btn"><a href="#" target="_blank"><span>click !</span><span>view more</span></a></button>
             </div>
           </div>
         </article>
