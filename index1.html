@@ -76,7 +76,7 @@
       justify-content:space-around;
       align-items: center;
     }
-    .main-nav li{      
+    .main-nav li{
       width:auto;
       height:auto;
       margin:0;
@@ -84,12 +84,25 @@
       border-radius: 0;
       padding:0;
     }
+    .main-nav a{
+      display: inline-block;
+      width:25px;
+      height:25px;
+    }
     .main-nav a span{
       display:inline-block;
       text-indent:-9999999999px;
     }
     .main-nav a .img-box{
       display:inline-block;
+      width:100%;
+      height:100%;
+    }
+    .main-nav svg{
+      transform:translateY(-10px);
+    }
+    .main-nav li:hover svg{
+      fill:var(--main-color01);
     }
 
     /* NAV */
@@ -773,9 +786,6 @@
         .container{
           min-width:320px;
         }
-        .sec .container{
-          bottom:40px;
-        }
 
         /* MAIN NAV */
         .main-nav{
@@ -977,7 +987,6 @@
 
     /* SCROLL EVENT */
     .sec01 .container{
-      /* transform:none !important; */
       transition:0.5s 0.5s !important;
     }
     .sec .container{
@@ -991,9 +1000,6 @@
       transform:translateX(0);
     }
 
-    .main-nav li:hover svg{
-      fill:var(--main-color01);
-    }
     .banner-wrap{
       position:fixed;
       left:0;
@@ -1005,26 +1011,6 @@
       padding:150px 100px;
       display:none;
     }
-    /* BEHIND-TXT */
-    /* .intro-txt>*{
-      position: relative;
-      z-index:10;
-    }
-    .behind-txt{
-      font-weight:900;
-      font-size:200px;
-      color:#fff;
-      position:absolute;
-      z-index:1;
-      -webkit-text-stroke:rgb(9, 72, 179) 1px;
-      opacity:0.5;
-
-      animation-name:moving-txt;
-      animation-duration:20s;
-      animation-timing-function:linear;
-      animation-iteration-count:infinite;
-    } */
-
 
   </style>
 </head>
@@ -1089,7 +1075,6 @@
             <li class="m-bottom-txt m-bottom-txt01"><span>2023 </span><span>web portfolio</span></li>
             <li class="m-bottom-txt m-bottom-txt02"><span>made by </span><span>haneul lee</span></li>
           </ul>
-          <!-- <p class="behind-txt">안녕하세요</p> -->
         </div>
       </div>
     </section>
@@ -1308,15 +1293,15 @@
       $('.sec01').addClass('active');
     },500)
     // KEYWORD EVENT
-      // let idx = 1;
-      // let loopKeyword = setInterval(function(){
-      //   // console.log(idx++);
-      //   $('.keyword').hide();
-      //   $('.keyword').eq(idx++).fadeIn(800);
-      //   if(idx>3){
-      //     idx=0;
-      //   }
-      // },2000);
+      let idx = 1;
+      let loopKeyword = setInterval(function(){
+        // console.log(idx++);
+        $('.keyword').hide();
+        $('.keyword').eq(idx++).fadeIn(800);
+        if(idx>3){
+          idx=0;
+        }
+      },2000);
 
   </script>
 </body>
