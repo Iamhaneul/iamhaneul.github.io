@@ -48,6 +48,22 @@
       overflow:hidden;
     }
     h1,h2,h3,h4,h5,h6{display:none;}
+    
+    /* SKIP MENU */
+    #skip-menu a{
+      position:fixed;
+      left:50%;
+      top:0;
+      z-index:2000;
+      transform:translate(-50%,-150%);
+      padding:10px;
+      background:#fff;
+      font-size:25px;
+      color:#000;
+    }
+    #skip-menu a:focus{
+      transform:translate(-50%,0);
+    }
 
     /* FULL PAGE */
     .sec{
@@ -443,15 +459,18 @@
         perspective:230px;
       }
       .btn span{
-        background:rgb(0,172,238);
-        background:linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+        /* background:rgb(0,172,238); */
+        background:var(--main-color01);
+        background: rgb(238, 80, 80);
+        /* background:linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%); */
+        background:linear-gradient(0deg,var(--main-color01),rgb(238,50,50) 100%);
         display:block;
         position:absolute;
         width:130px;
         height:40px;
-        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-        7px 7px 20px 0px rgba(0,0,0,.1),
-        4px 4px 5px 0px rgba(0,0,0,.1);
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,0.5),
+        7px 7px 20px 0px rgba(0,0,0,0.1),
+        4px 4px 5px 0px rgba(0,0,0,0.1);
         border-radius:5px;
         margin:0;
         text-align:center;
@@ -482,17 +501,17 @@
         transform-origin:50% 50% -20px;
       }
       .btn:hover span:nth-child(1){
-        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-        7px 7px 20px 0px rgba(0,0,0,.1),
-        4px 4px 5px 0px rgba(0,0,0,.1);
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,2550,0.5),
+        7px 7px 20px 0px rgba(0,0,0,0.1),
+        4px 4px 5px 0px rgba(0,0,0,0.1);
         -webkit-transform:rotateX(0deg);
         -moz-transform:rotateX(0deg);
         transform:rotateX(0deg);
       }
       .btn:hover span:nth-child(2){
-        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-        7px 7px 20px 0px rgba(0,0,0,.1),
-        4px 4px 5px 0px rgba(0,0,0,.1);
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,0.5),
+        7px 7px 20px 0px rgba(0,0,0,0.1),
+        4px 4px 5px 0px rgba(0,0,0,0.1);
         color: transparent;
         -webkit-transform:rotateX(-90deg);
         -moz-transform:rotateX(-90deg);
@@ -1028,7 +1047,6 @@
       50%{top:5px;}
       100%{top:0;}
     }
-
     @keyframes main-color01{
       0%{color:#fff;}
       50%{color:var(--main-color01);}
@@ -1062,6 +1080,9 @@
       justify-content:center;
       align-items:center;
     }
+    .banner-wrap.active{
+      display:flex;
+    }
     .banner{
       width:80%;
       max-width:1080px;
@@ -1092,32 +1113,34 @@
 </head>
 
 <body>
-  <div class="skip-menu"></div>
+  <div id="skip-menu">
+    <a href="./index.html">본문 바로가기</a>
+  </div>
   <section id="wrap">
     <header id="header">
       <h1><a href="./index.html">이하늘의 개인 포트폴리오</a></h1>
       <nav class="main-nav">
         <ul>
           <li>
-            <a href="./index1.html#intro">
+            <a href="./index.html#intro">
               <span>intro</span>
               <div class="img-box"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg></div>
             </a>
           </li>
           <li>
-            <a href="./index1.html#about">
+            <a href="./index.html#about">
               <span>about</span>
               <div class="img-box"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg></div>
             </a>
           </li>
           <li>
-            <a href="./index1.html#publishing01">
+            <a href="./index.html#publishing01">
             <span>publishing</span>
             <div class="img-box"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="20" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></div>
           </a>
         </li>
           <li>
-            <a href="./index1.html#graphics01">
+            <a href="./index.html#graphics01">
               <span>graphics</span>
               <div class="img-box"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M160 32c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160zM396 138.7l96 144c4.9 7.4 5.4 16.8 1.2 24.6S480.9 320 472 320H328 280 200c-9.2 0-17.6-5.3-21.6-13.6s-2.9-18.2 2.9-25.4l64-80c4.6-5.7 11.4-9 18.7-9s14.2 3.3 18.7 9l17.3 21.6 56-84C360.5 132 368 128 376 128s15.5 4 20 10.7zM192 128a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120V344c0 75.1 60.9 136 136 136H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H136c-48.6 0-88-39.4-88-88V120z"/></svg></div>
             </a>
@@ -1321,11 +1344,11 @@
       </div>
       <div class="banner banner01">        
         <p class="banner-txt">배너01</p>
-        <div class="img-box"><img src="./images/img-cardnews01.jpg" alt="banner01"></div>
+        <div class="img-box"><img src="./images/poster01.jpg" alt="banner01"></div>
       </div>
       <div class="banner banner02">
         배너02
-        <div class="img-box"><img src="./images/img-cardnews01.jpg" alt="banner01"></div>
+        <div class="img-box"><img src="./images/img-poster02.jpg" alt="banner01"></div>
       </div>
       <div class="banner banner03">
         배너03
@@ -1333,7 +1356,7 @@
       </div>
       <div class="banner banner04">
         배너04
-        <div class="img-box"><img src="./images/img-cardnews01.jpg" alt="banner01"></div>
+        <div class="img-box"><img src="./images/img-cardnews02.jpg" alt="banner01"></div>
       </div>
     </section>
     <footer id="footer">
@@ -1405,11 +1428,34 @@
       }, 400);
     });
 
-    // IMAGE(BANNER) CLICK EVENT 
-
+    // IMAGE(BANNER) CLICK EVENT
+    let allBanner = document.querySelectorAll('.banner');
+    $('#btn-banner01').click(function(){
+      $('.banner-wrap').addClass('active');
+      $('.banner01').show();
+      allBanner.hide();
+    })
+    $('#btn-banner02').click(function(){
+      $('.banner-wrap').addClass('active');
+      $('.banner02').show();
+      allBanner.hide();
+    })
+    $('#btn-banner03','#btn-banner03-2').click(function(){
+      $('.banner-wrap').addClass('active');
+      $('.banner03').show();
+      allBanner.hide();
+    })
+    $('#btn-banner04','#btn-banner04-2').click(function(){
+      $('.banner-wrap').addClass('active');
+      $('.banner04').show();
+      allBanner.hide();
+    })
 
     // IMAGE(BANNER) CLOSE BUTTON EVENT
-    
+    $('.btn-banner-close').click(function(){
+      $('.banner-wrap').hide();
+      allBanner.hide();
+    })
 
   </script>
 </body>
