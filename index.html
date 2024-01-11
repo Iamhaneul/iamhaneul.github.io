@@ -461,7 +461,6 @@
       .btn span{
         /* background:rgb(0,172,238); */
         background:var(--main-color01);
-        background: rgb(238, 80, 80);
         /* background:linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%); */
         background:linear-gradient(0deg,var(--main-color01),rgb(238,50,50) 100%);
         display:block;
@@ -850,11 +849,6 @@
           min-width:320px;
         }
 
-        /* SCROLLBAR STYLE */
-        ::-webkit-scrollbar{
-          height:6px;
-        }
-
         /* MAIN NAV */
         .main-nav{
           display:block;
@@ -1079,16 +1073,18 @@
       display:flex;      
       justify-content:center;
       align-items:center;
-    }
-    .banner-wrap.active{
-      display:flex;
+      display:none;
+      justify-content:center;
+      align-items:center;
     }
     .banner{
       width:80%;
-      max-width:1080px;
+      max-width:800px;
+      min-width:250px;
       height:80%;
       background:#fff;
-      overflow-y:scroll;     
+      overflow-y:overlay;
+      display:none;
     }
     .banner-txt{
       padding:10px 30px;
@@ -1104,9 +1100,6 @@
     }
     .btn-banner-close svg{
       fill:#fff;
-    }
-    .banner-wrap,.banner{
-      display:none;
     }
     
   </style>
@@ -1429,26 +1422,28 @@
     });
 
     // IMAGE(BANNER) CLICK EVENT
-    let allBanner = document.querySelectorAll('.banner');
+    let allBanner = $('.banner');
     $('#btn-banner01').click(function(){
-      $('.banner-wrap').addClass('active');
-      $('.banner01').show();
+      $('.banner-wrap').css({display:'flex'});
       allBanner.hide();
+      $('.banner01').show();
     })
     $('#btn-banner02').click(function(){
-      $('.banner-wrap').addClass('active');
+      $('.banner-wrap').css({display:'flex'});
+      allBanner.hide();
       $('.banner02').show();
-      allBanner.hide();
+      
     })
-    $('#btn-banner03','#btn-banner03-2').click(function(){
-      $('.banner-wrap').addClass('active');
+    $('#btn-banner03-1, #btn-banner03-2').click(function(){      
+      $('.banner-wrap').css({display:'flex'});
+      allBanner.hide();
       $('.banner03').show();
-      allBanner.hide();
+     
     })
-    $('#btn-banner04','#btn-banner04-2').click(function(){
-      $('.banner-wrap').addClass('active');
-      $('.banner04').show();
+    $('#btn-banner04-1, #btn-banner04-2').click(function(){
+      $('.banner-wrap').css({display:'flex'});
       allBanner.hide();
+      $('.banner04').show();
     })
 
     // IMAGE(BANNER) CLOSE BUTTON EVENT
