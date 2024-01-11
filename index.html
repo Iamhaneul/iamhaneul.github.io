@@ -633,6 +633,11 @@
           padding:50px;
         }
 
+        /* SCROLLBAR STYLE */
+        ::-webkit-scrollbar{
+          height:10px;
+        }
+
         /* NAV */
         nav ul{
           width:424px;
@@ -813,6 +818,11 @@
         }
         .container{
           min-width:320px;
+        }
+
+        /* SCROLLBAR STYLE */
+        ::-webkit-scrollbar{
+          height:6px;
         }
 
         /* MAIN NAV */
@@ -1048,19 +1058,19 @@
       font-size:20px;
     }
     .btn-banner-close{
-      position: absolute;
+      position:absolute;
       right:1em;
       top:1em;
     }
     .btn-banner-close .img-box{
-      width:2em;
+      width:1.5em;
     }
     .btn-banner-close svg{
       fill:#fff;
     }
-    .banner-wrap,.banner{
+    /* .banner-wrap,.banner{
       display:none;
-    }
+    } */
     
   </style>
 </head>
@@ -1296,7 +1306,7 @@
         <p class="banner-txt">배너01</p>
         <div class="img-box"><img src="./images/img-cardnews01.jpg" alt="banner01"></div>
       </div>
-      <div class="banner banner02">
+      <!-- <div class="banner banner02">
         배너02
         <div class="img-box"><img src="./images/img-cardnews01.jpg" alt="banner01"></div>
       </div>
@@ -1307,7 +1317,7 @@
       <div class="banner banner04">
         배너04
         <div class="img-box"><img src="./images/img-cardnews01.jpg" alt="banner01"></div>
-      </div>
+      </div> -->
     </section>
     <footer id="footer">
       <address>HANEUL LEE</address>
@@ -1379,6 +1389,11 @@
     });
 
     // BANNER CLICK EVENT
+    $('#btn-banner01').click(function(){
+      $('.banner01').addClass('active');
+    })
+
+    // BANNER CLOSE BUTTON EVENT
 
 
   </script>
