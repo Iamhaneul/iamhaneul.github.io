@@ -222,7 +222,6 @@ nav li.active{
   padding:7px 0;
   font-weight:700;
   font-size:16px;
-  border:3px solid var(--main-color02);
   border-radius:20px;
   color:var(--main-color02);
 }
@@ -323,7 +322,6 @@ nav li.active{
   font-weight:700;
   text-align:center;
   text-transform:uppercase;
-  border:2px solid var(--main-color02);
   border-radius:30px;
   color:var(--main-color02);
 }
@@ -370,7 +368,6 @@ nav li.active{
   padding:7px 40px;
   font-weight:700;
   text-align:center;
-  border:2px solid var(--main-color02);
   border-radius:30px;
   color:var(--main-color02);
   position:relative;
