@@ -693,8 +693,7 @@ nav li.active{
       top:140%;
     }
     .btn{
-      font-size:12px;
-      transform:scale(0.7);
+      transform:scale(0.8);
     }
 
     /* sec06 graphicS01 */
@@ -955,9 +954,9 @@ nav li.active{
       width:20px;
       top:160%;
     }
-    /* .btn{
-      transform:scale(0.4);
-    } */
+    .btn{
+      transform:scale(0.6);
+    }
 
     /* sec06 graphicS01 */
     .sec06 .art-design{
